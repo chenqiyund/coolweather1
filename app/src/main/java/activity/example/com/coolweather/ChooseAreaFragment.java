@@ -134,7 +134,7 @@ public class ChooseAreaFragment extends Fragment {
         if (provinceList.size() > 0) {
             dataList.clear();
             for (Province province : provinceList) {
-                dataList.add(province.getProviinceName());
+                dataList.add(province.getProvinceName());
             }
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
@@ -148,7 +148,7 @@ public class ChooseAreaFragment extends Fragment {
      * 查询选中省内所有市，优先从数据库查询，如果没有查到在去服务器上查询
      */
     private void queryCities() {
-        txtTitle.setText(selectedProvince.getProviinceName());
+        txtTitle.setText(selectedProvince.getProvinceName());
         backButton.setVisibility(View.VISIBLE);
         cityList = DataSupport.where("provinceid = ?",String.valueOf(selectedProvince.getId())).find(City.class);
         if (cityList.size() > 0) {

@@ -28,7 +28,7 @@ public class Utility {
                 for (int i = 0; i < allProvince.length();i++){
                     JSONObject provinceObject = allProvince.getJSONObject(i);
                     Province province = new Province();
-                    province.setProviinceName(provinceObject.getString("name"));
+                    province.setProvinceName(provinceObject.getString("name"));
                     province.setProvinceCode(provinceObject.getInt("id"));
                     province.save();
                 }
